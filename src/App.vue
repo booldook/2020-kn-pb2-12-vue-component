@@ -31,7 +31,6 @@ export default {
 	methods : {
 		onSubmit(value) {
 			this.search = value;
-			alert(this.search);
 		}
 	}
 }
