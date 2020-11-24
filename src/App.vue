@@ -1,21 +1,18 @@
-<template>
-	<div class="container">
-		<div class="jumbotron">
-			<h1>
-				{{title}}
-				<hr>
-				<small class="text-secondary">
-					<i class="fa fa-shopping-basket mr-3"></i>
-					{{subTitle}}
-				</small>
-			</h1>
-		</div>
-		<search-bar v-on:@submit='onSubmit'></search-bar>
-	</div>
+<template lang='pug'>
+	.container
+		.jumbotron
+			h1 {{title}}
+				hr
+				small.text-secondary
+					i.fa.fa-shopping-basket.mr-3
+					span {{subTitle}}
+		search-bar(v-on:@submit="onSubmit")
+		product-wrapper
 </template>
 
 <script>
 import SearchBar from './components/SearchBar.vue';
+import ProductWrapper from './components/ProductWrapper.vue';
 
 export default {
 	data() {
@@ -26,7 +23,8 @@ export default {
 		}
 	},
 	components: {
-		'search-bar': SearchBar
+		'search-bar': SearchBar,
+		'product-wrapper': ProductWrapper,
 	},
 	methods : {
 		onSubmit(value) {
@@ -36,6 +34,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang='scss'>
 
 </style>
