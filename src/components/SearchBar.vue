@@ -15,7 +15,6 @@ export default {
 	methods: {
 		// 자식이 부모에게 데이터를 보낼때는 이벤트로 보낸다.
 		// 부모로부터 데이터를 받을때는 변수로 받는다.
-		
 		onSubmit(e) {
 			// $emit == dispatchEvent
 			this.$emit('@submit', this.search);

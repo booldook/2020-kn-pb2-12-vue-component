@@ -7,10 +7,12 @@
 					i.fa.fa-shopping-basket.mr-3
 					span {{subTitle}}
 		search-bar(v-on:@submit="onSubmit")
-		product-wrapper
+		product-wrapper(v-bind:search='search' v-show='search.length')
 </template>
 
 <script>
+// 자식이 부모에게 데이터를 보낼때는 이벤트($emit)로 보낸다.
+// 부모로부터 데이터를 받을때는 변수(props)로 받는다.
 import SearchBar from './components/SearchBar.vue';
 import ProductWrapper from './components/ProductWrapper.vue';
 

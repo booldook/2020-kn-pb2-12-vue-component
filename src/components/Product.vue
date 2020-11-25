@@ -13,8 +13,10 @@ export default {
 
 <style lang='scss' scoped>
 	.product {
+		flex: 33.3333% 0 0;
+		padding: 1%;
 		img.img {}
-		.title {}
-		.price {}
+		.title {background-color: #222; color: #fff; padding: 1em; font-size: 1.25em;}
+		.price {background-color: #222; color: #ccc; padding: 0 1em 1em 1.25em;}
 	}
 </style>
