@@ -1,13 +1,14 @@
 <template lang='pug'>
 	.product
-		img.img.w-100(src='../assets/products/lx-0-0.jpg')
-		.title 좋은상품
-		.price $12.00
+		img.img.w-100(v-bind:src="require(`../assets/products/${product.src}`)")
+		.title {{product.name}}
+		.price {{product.price}}
 </template>
 
 <script>
 export default {
-	name: 'product'
+	name: 'product',
+	props: ['product']
 }
 </script>
 

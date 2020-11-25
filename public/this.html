@@ -1,0 +1,13 @@
+<script>
+	var obj = {
+		a() {
+			console.log(this);
+		},
+		b: () => {
+			console.log(this);
+		}
+	}
+	
+	obj.a();
+	obj.b();
+</script>
