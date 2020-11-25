@@ -1,6 +1,6 @@
 <template lang="pug">
 	form(id='search-form' name='search-form' v-on:submit.prevent='onSubmit')
-		input.form-control.search-input(v-model='search' type='text' placeholder='검색할 상품을 입력하세요.' autofocus)
+		input.form-control.search-input(v-model='search' type='text' placeholder='검색할 상품을 입력하세요.' autofocus v-on:keyup='onKeyUp')
 		i.fa.fa-times-circle.bt-reset(v-show='search.length' v-on:click='onReset')
 </template>
 
@@ -19,9 +19,12 @@ export default {
 			// $emit == dispatchEvent
 			this.$emit('@submit', this.search);
 		},
-		
 		onReset(e) {
 			this.search = '';
+			this.$emit('@submit', this.search);
+		},
+		onKeyUp(e) {
+			if(this.search.length == 0) this.onReset();
 		}
 	}
 }

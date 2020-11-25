@@ -7,7 +7,8 @@
 					i.fa.fa-shopping-basket.mr-3
 					span {{subTitle}}
 		search-bar(v-on:@submit="onSubmit")
-		product-wrapper(v-bind:search='search' v-show='search.length')
+		transition(name='fade' mode='out-in' appear)
+			product-wrapper(v-bind:search='search' v-show='search.length')
 </template>
 
 <script>
